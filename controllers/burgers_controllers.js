@@ -1,7 +1,12 @@
-const burger = require("../models/burger.js");
+const express = require("express");
 
-const router = () => {
+const router = express.Router();
 
-}
+// const burger = require("../models/burger.js");
+
+router.get("/",(req,res)=>{
+    
+    res.render('index');
+});
 
 module.exports = router;
