@@ -6,13 +6,13 @@
         <h1>Eat-Da-Burger!</h1>
     </div>
     <div class="row justify-content-center mb-2">
-        <div class="col-6">
+        <div class="col-5">
             
             {{#each burgers}}
             {{#unless this.devoured}}
             <div class="row mb-2">
                 <div class="col-8 pb-3 pt-1 burger-not-eaten">
-                    {{this.id}} {{this.burger_name}}
+                    {{this.id}}. {{this.burger_name}}
                 </div>
                 <div class="col-4 mt-3">
                     <button class="btn btn-secondary btn-block devour-btn" data-id="{{this.id}}">Devour it!</button>
@@ -22,12 +22,12 @@
             {{/each}}
 
         </div>
-        <div class="col-6">
+        <div class="col-5">
 
             {{#each burgers}}
             {{#if this.devoured}}
             <div class="row burger-eaten justify-content-center">
-                {{this.id}} {{this.burger_name}}
+                <input type="text" value="{{this.id}}. {{this.burger_name}}" disabled class="burger-eaten">
             </div>
             {{/if}}
             {{/each}}

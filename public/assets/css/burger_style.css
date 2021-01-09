@@ -11,3 +11,8 @@ h1 {
     background-color: #d9e6fa;
     text-align: center;
 }
+
+.burger-eaten {
+    padding-left: 10px;
+    width: 100%;
+}
