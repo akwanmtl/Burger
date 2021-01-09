@@ -1,0 +1,45 @@
+<div class="container ">
+    <div class="row justify-content-center">
+        <img src="./assets/img/burger.png" alt="Image of a burger" height="150px">
+    </div>
+    <div class="row justify-content-center">
+        <h1>Eat-Da-Burger!</h1>
+    </div>
+    <div class="row justify-content-center mb-2">
+        <div class="col-5">
+            
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <div class="row mb-2">
+                <div class="col-8 pb-3 pt-1 burger-not-eaten">
+                    {{this.id}}. {{this.burger_name}}
+                </div>
+                <div class="col-4 mt-3">
+                    <button class="btn btn-secondary btn-block devour-btn" data-id="{{this.id}}">Devour it!</button>
+                </div>
+            </div>
+            {{/unless}}
+            {{/each}}
+
+        </div>
+        <div class="col-5">
+
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div class="row burger-eaten justify-content-center">
+                <input type="text" value="{{this.id}}. {{this.burger_name}}" disabled class="burger-eaten">
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <form id="add-burger">
+            <div class="row justify-content-center">
+            <textarea class="form-control mb-2" id="burgerText"></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <p>Enter a burger you want to eat andc lick the "Submit" button.</p>
+        </form>
+    </div>
+</div>
