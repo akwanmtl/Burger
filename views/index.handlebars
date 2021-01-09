@@ -26,8 +26,8 @@
 
             {{#each burgers}}
             {{#if this.devoured}}
-            <div class="row burger-eaten justify-content-center">
-                <input type="text" value="{{this.id}}. {{this.burger_name}}" disabled class="burger-eaten">
+            <div class="row">
+                <input type="text" value="{{this.id}}. {{this.burger_name}}" class="burger-eaten" readonly>
             </div>
             {{/if}}
             {{/each}}
