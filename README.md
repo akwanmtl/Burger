@@ -1,7 +1,7 @@
 # Node-Express_Handlebars - Eat-Da-Burger!
 
 ## Description
-The Eat-Da-Burger website allows users to enter burgers that they would like to eat and then 'eat' them. This application was built using a MVC design and it uses MySQL database, Express, handlebars, and Node. This application is deployed on Heroku using JawsDB as the online database.
+The Eat-Da-Burger website allows users to enter burgers that they would like to eat and then 'eat' them. This application was built using a MVC design. It uses MySQL database, Express, handlebars, Node and REST API design. This application is deployed on Heroku using JawsDB as the online database.
 
 * Link to the app on Heroku: https://guarded-sierra-90184.herokuapp.com/
 * Link to the Github repository: https://github.com/akwanmtl/Burger
