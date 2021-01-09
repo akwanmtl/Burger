@@ -4,7 +4,7 @@ const router = express.Router();
 
 const burger = require("../models/burger.js");
 
-router.get("/index",(req,res)=>{
+router.get("/",(req,res)=>{
     
     burger.selectAll((data) =>{
         
