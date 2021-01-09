@@ -10,11 +10,15 @@ h1 {
 .burger-not-eaten {
     background-color: #d9e6fa;
     text-align: center;
+    border: 1px solid #96a1a8;
 }
 
 .burger-eaten {
     padding-left: 10px;
     width: 100%;
+    background-color: #d9e6fa;
+    color: grey;
+    border: 1px solid #96a1a8;
 }
 
 #burgerText {
