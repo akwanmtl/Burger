@@ -16,3 +16,9 @@ h1 {
     padding-left: 10px;
     width: 100%;
 }
+
+#burgerText {
+    height: 60px;
+    line-height: 16px;
+    padding-top:20px;
+}

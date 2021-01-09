@@ -20,3 +20,22 @@ devourBtn.click((e)=>{
         }
     })
 })
+
+
+const addBurgerForm = $("#add-burger");
+
+addBurgerForm.submit((e)=>{
+    e.preventDefault();
+    const newBurger = {burger_name: $("#burgerText").val()};
+    fetch("/api/burgers", {
+        method: "POST",
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type" : "application/json"
+        }, 
+        body: JSON.stringify(newBurger)
+    })
+    .then((response)=> {
+        location.reload();
+    })
+})

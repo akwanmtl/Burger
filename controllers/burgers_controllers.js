@@ -20,7 +20,14 @@ router.put("/api/burgers/:id", (req,res)=>{
         if(result.changedRows === 0){
             return res.status(404).end();
         }
-        res.status(200).end();
+        return res.status(200).end();
+    });
+});
+
+router.post("/api/burgers", (req,res)=>{
+    const burgerName = req.body.burger_name;
+    burger.insertOne(['burger_name'],[burgerName],(result)=>{
+        res.json({id: result.insertID});
     });
 });
 
