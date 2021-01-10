@@ -25,6 +25,7 @@ The website has three components:
 ## Credits
 
 * [Burger Image](https://www.vippng.com/preview/ToRmoh_hamburguesa-kawaii-png-burger-picsart/)
+* ORM Helper function - UofT Bootcamp Activity example on MVC
 * [License badge link](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
 ## License

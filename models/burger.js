@@ -1,5 +1,7 @@
+// Dependencies
 const orm = require("../config/orm.js");
 
+// Model burger with the database table included
 const burger = {
     selectAll(cb) {
         orm.selectAll('burgers', (res) => cb(res));
@@ -12,4 +14,5 @@ const burger = {
     }
 };
 
+// Export burger for controller
 module.exports = burger;

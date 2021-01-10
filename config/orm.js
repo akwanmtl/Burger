@@ -1,6 +1,8 @@
 // Dependencies
 const connection = require("./connection.js");
 
+// The helper functions were taken from the activity 16-MvcExample
+// Function that print the number of ? separated by commas
 const printQuestionMarks = (num) => {
     const arr = [];
     for (let i = 0; i < num; i++) {
@@ -9,7 +11,7 @@ const printQuestionMarks = (num) => {
     return arr.toString();
 };
   
-// Helper function to convert object key/value pairs to SQL syntax
+// Function that converts object key/value pairs to SQL syntax
 const objToSql = (ob) => {
     const arr = [];
 
@@ -24,11 +26,12 @@ const objToSql = (ob) => {
             arr.push(`${key}=${value}`);
         }
     }
-
     return arr.toString();
 };
 
+// class ORM with three functions to manipulate SQL database
 const orm = {
+    // select all data from the table
     selectAll(table, cb) {
         let query = `SELECT * FROM ${table}`;
         connection.query(query, (err,result)=> {
@@ -36,26 +39,24 @@ const orm = {
             cb(result)
         });
     },
+    
+    // isert a row into the table
     insertOne(table,cols,vals,cb) {
         let query = `INSERT INTO ${table}`;
-        query += ' ( ';
-        query += cols.toString();
-        query += ' ) ';
-        query += ' VALUES ( ';
-        query += printQuestionMarks(vals.length);
-        query += ' ) ';
+        query += ` (${cols.toString()}) `;
+        query += ` VALUES (${printQuestionMarks(vals.length)})`;
         
         connection.query(query,vals,(err,result) =>{
             if(err) throw err;
             cb(result);
         });
     },
+    
+    // update a row from the table
     updateOne(table,objColVals, condition, cb){
         let query = `UPDATE ${table}`;
-        query += ' SET ';
-        query += objToSql(objColVals)
-        query += ' WHERE '
-        query += condition;
+        query += ` SET ${objToSql(objColVals)}`;
+        query += ` WHERE ${condition}`
 
         connection.query(query,(err,result) =>{
             if(err) throw err;
@@ -64,4 +65,5 @@ const orm = {
     }
 };
 
+// export orm for model
 module.exports = orm;
