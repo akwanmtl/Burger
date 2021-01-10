@@ -7,12 +7,14 @@ h1 {
     font-size: 32px;
 }
 
+/*Style for burgers not eaten*/
 .burger-not-eaten {
     background-color: #d9e6fa;
     text-align: center;
     border: 1px solid #96a1a8;
 }
 
+/*Style for eaten burgers*/
 .burger-eaten {
     padding-left: 10px;
     width: 100%;
@@ -21,6 +23,7 @@ h1 {
     border: 1px solid #96a1a8;
 }
 
+/*Style for text area*/
 #burgerText {
     height: 60px;
     line-height: 16px;
